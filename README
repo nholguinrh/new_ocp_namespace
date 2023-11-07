@@ -1,0 +1,3 @@
+Create an HTPasswd File:
+
+OpenShift uses the HTPasswd identity provider to manage users. You need to create an HTPasswd file with user credentials. You can use the htpasswd command to create or update this file. If you don't have it installed, you can install it on your system. For example, 

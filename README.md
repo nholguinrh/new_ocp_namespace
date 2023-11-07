@@ -32,3 +32,20 @@ roleRef:
   name: cluster-admin
   apiGroup: rbac.authorization.k8s.io
 ```
+**Assign the User to a Namespace:**
+If you want the user to have admin privileges within a specific namespace, you can create a RoleBinding for that user within the desired namespace. Create a YAML file like this
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: namespace-admin
+  namespace: your-namespace
+subjects:
+- kind: User
+  name: username
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: admin
+  apiGroup: rbac.authorization.k8s.io
+```
